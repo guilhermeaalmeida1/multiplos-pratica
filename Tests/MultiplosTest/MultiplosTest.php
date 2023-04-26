@@ -12,8 +12,7 @@ class MultiplosTest extends TestCase
 {
     public function testNumeroMultiploFoiDefinido()
     {
-        $multiplos = new Multiplos(3);
-        $this->assertEquals($multiplos->getNumeroMultiploParaValidacao(), array(3));
+        $this->assertEquals((new Multiplos(3))->getNumeroMultiploParaValidacao(), array(3));
     }
 
     private function comparaResultado($primeiroResultado, $segundoResultado)
