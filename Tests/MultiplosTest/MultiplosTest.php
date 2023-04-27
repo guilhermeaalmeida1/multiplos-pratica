@@ -5,106 +5,106 @@ namespace Tests\MultiplosTest;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\TestCase;
-use src\Multiplos\Multiplos;
+use src\Multiples\Multiple;
 
-#[CoversClass(Multiplos::class)]
+#[CoversClass(Multiple::class)]
 class MultiplosTest extends TestCase
 {
-    public function testNumeroMultiploFoiDefinido()
+    public function testMultipleNUmberWasDefinede()
     {
-        $this->assertEquals((new Multiplos(3))->getNumeroMultiploParaValidacao(), array(3));
+        $this->assertEquals((new Multiple(3))->getMultipleNumbersForValidation(), array(3));
     }
 
-    private function comparaResultado($primeiroResultado, $segundoResultado)
+    private function compareResult($firstResulta, $secondResult)
     {
-        return $primeiroResultado == $segundoResultado;
+        return $firstResulta == $secondResult;
     }
 
     #[TestWith([23, 10, true])]
     #[TestWith([2633, 100, true])]
     #[TestWith([24, 10, false])]
-    public function testValidaMultiplosTresECinco($resultadoEsperado, $totalDeNumerosNaturais, $boolComparacao): void
+    public function testValidateMultipleOdThreeAndFive($resultDesired, $totalUmbersToValidate, $boolToCompare): void
     {
-        $multiplos = new Multiplos(3, 5);
+        $multiple = new Multiple(3, 5);
 
-        $multiplos->validaNumeros($totalDeNumerosNaturais);
+        $multiple->validateNumber($totalUmbersToValidate);
 
         $this->assertEquals(
-            $this->comparaResultado($resultadoEsperado, $multiplos->mostraResultado()),
-            $boolComparacao
+            $this->compareResult($resultDesired, $multiple->showResult()),
+            $boolToCompare
         );
     }
 
     #[TestWith([18, 10, true])]
     #[TestWith([1683, 100, true])]
     #[TestWith([24, 10, false])]
-    public function testValidaMultiplosTres($resultadoEsperado, $totalDeNumerosNaturais, $boolComparacao): void
+    public function testValidaMultiplosTres($resultDesired, $totalUmbersToValidate, $boolToCompare): void
     {
-        $multiplosaaaaaaaaaa = new Multiplos(3);
+        $multiple = new Multiple(3);
 
-        $multiplosaaaaaaaaaa->validaNumeros($totalDeNumerosNaturais);
+        $multiple->validateNumber($totalUmbersToValidate);
 
-        $this->assertEquals($this->comparaResultado($resultadoEsperado, $multiplosaaaaaaaaaa->mostraResultado()),
-            $boolComparacao);
+        $this->assertEquals($this->compareResult($resultDesired, $multiple->showResult()),
+            $boolToCompare);
     }
 
     #[TestWith([5, 10, true])]
     #[TestWith([950, 100, true])]
     #[TestWith([24, 10, false])]
-    public function testValidaMultiplosCinco($resultadoEsperado, $totalDeNumerosNaturais, $boolComparacao): void
+    public function testValidaMultiplosCinco($resultDesired, $totalUmbersToValidate, $boolToCompare): void
     {
-        $multiplos = new Multiplos(5);
+        $multiple = new Multiple(5);
 
-        $multiplos->validaNumeros($totalDeNumerosNaturais);
+        $multiple->validateNumber($totalUmbersToValidate);
 
         $this->assertEquals(
-            $this->comparaResultado($resultadoEsperado, $multiplos->mostraResultado()),
-            $boolComparacao
+            $this->compareResult($resultDesired, $multiple->showResult()),
+            $boolToCompare
         );
     }
 
     #[TestWith([7, 10, true])]
     #[TestWith([735, 100, true])]
     #[TestWith([24, 10, false])]
-    public function testValidaMultiplosSete($resultadoEsperado, $totalDeNumerosNaturais, $boolComparacao): void
+    public function testValidaMultiplosSete($resultDesired, $totalUmbersToValidate, $boolToCompare): void
     {
-        $multiplos = new Multiplos(7);
+        $multiple = new Multiple(7);
 
-        $multiplos->validaNumeros($totalDeNumerosNaturais);
+        $multiple->validateNumber($totalUmbersToValidate);
 
         $this->assertEquals(
-            $this->comparaResultado($resultadoEsperado, $multiplos->mostraResultado()),
-            $boolComparacao
+            $this->compareResult($resultDesired, $multiple->showResult()),
+            $boolToCompare
         );
     }
 
     #[TestWith([12, 10, true])]
     #[TestWith([1685, 100, true])]
     #[TestWith([24, 10, false])]
-    public function testValidaMultiplosCincoESete($resultadoEsperado, $totalDeNumerosNaturais, $boolComparacao): void
+    public function testValidaMultiplosCincoESete($resultDesired, $totalUmbersToValidate, $boolToCompare): void
     {
-        $multiplos = new Multiplos(5, 7);
+        $multiple = new Multiple(5, 7);
 
-        $multiplos->validaNumeros($totalDeNumerosNaturais);
+        $multiple->validateNumber($totalUmbersToValidate);
 
         $this->assertEquals(
-            $this->comparaResultado($resultadoEsperado, $multiplos->mostraResultado()),
-            $boolComparacao
+            $this->compareResult($resultDesired, $multiple->showResult()),
+            $boolToCompare
         );
     }
 
     #[TestWith([25, 10, true])]
     #[TestWith([2418, 100, true])]
     #[TestWith([24, 10, false])]
-    public function testValidaMultiplosTresESete($resultadoEsperado, $totalDeNumerosNaturais, $boolComparacao): void
+    public function testValidaMultiplosTresESete($resultDesired, $totalUmbersToValidate, $boolToCompare): void
     {
-        $multiplos = new Multiplos(3, 7);
+        $multiple = new Multiple(3, 7);
 
-        $multiplos->validaNumeros($totalDeNumerosNaturais);
+        $multiple->validateNumber($totalUmbersToValidate);
 
         $this->assertEquals(
-            $this->comparaResultado($resultadoEsperado, $multiplos->mostraResultado()),
-            $boolComparacao
+            $this->compareResult($resultDesired, $multiple->showResult()),
+            $boolToCompare
         );
     }
 }
